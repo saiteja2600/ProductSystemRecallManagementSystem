@@ -1,0 +1,178 @@
+@page
+@model PSRMS.Pages.Accounts.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/Login_m/login.css" asp-append-version="true" />
+
+    <title>PSRMS - Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+
+                <!-- Brand -->
+                <div class="brand-block">
+                    <div class="brand-badge">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                    </div>
+                    <div class="brand-title">PSRMS</div>
+                    <div class="brand-subtitle">Product Safety Recall Management</div>
+                </div>
+
+                <div class="card login-card">
+
+                    <div class="login-card-body">
+
+                        <div class="text-center mb-4">
+                            <div class="login-heading">Sign in to your account</div>
+                            <div class="login-subheading">Track recalls, manage cases, and keep customers safe.</div>
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 px-3 small validation-summary-errors" role="alert"></div>
+<form method="post" id="loginForm">
+
+    <div asp-validation-summary="ModelOnly"
+         class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+
+        <input asp-for="Email"
+               class="form-control form-control-custom"
+               placeholder="Enter Email" />
+
+        <span asp-validation-for="Email"
+              class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password"
+               class="form-label"></label>
+
+        <input asp-for="Password"
+               type="password"
+               class="form-control form-control-custom"
+               placeholder="Enter Password" />
+
+        <span asp-validation-for="Password"
+              class="text-danger small"></span>
+    </div>
+
+    @* <div class="form-check mb-4">
+        <input asp-for="RememberMe"
+               class="form-check-input" />
+
+        <label asp-for="RememberMe"
+               class="form-check-label"></label>
+    </div> *@
+
+    <div class="d-grid">
+        <button type="submit"
+                class="btn btn-primary btn-login">
+            Sign In
+        </button>
+    </div>
+
+</form>
+                        <div class="divider-text">New to PSRMS</div>
+
+                        <!-- Register -->
+                        <div class="text-center">
+                            <a href="/Accounts/Register" class="text-decoration-none register-link">
+                                Create an account &rarr;
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p class="text-center mt-4 mb-0" style="color: rgba(255,255,255,0.45); font-size: 0.78rem;">
+                    &copy; @DateTime.Now.Year PSRMS &mdash; Keeping products, and customers, safe.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+    $(function () {
+
+        $("#loginForm").validate({
+
+            rules: {
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Password: {
+                    required: true,
+                    minlength: 8
+                }
+            },
+
+            messages: {
+                Email: {
+                    required: "Email is required.",
+                    email: "Enter a valid email address."
+                },
+                Password: {
+                    required: "Password is required.",
+                    minlength: "Password must be at least 8 characters."
+                }
+            },
+
+            errorClass: "text-danger",
+
+            highlight: function (element) {
+                $(element).addClass("is-invalid");
+            },
+
+            unhighlight: function (element) {
+                $(element).removeClass("is-invalid");
+            },
+
+            errorPlacement: function (error, element) {
+
+                var validationSpan =
+                    $('[data-valmsg-for="' + element.attr("name") + '"]');
+
+                if (validationSpan.length) {
+                    validationSpan.html(error);
+                }
+                else {
+                    error.insertAfter(element);
+                }
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

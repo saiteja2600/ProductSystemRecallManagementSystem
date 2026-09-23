@@ -1,0 +1,439 @@
+@page
+@model PSRMS.Pages.Manufactors.EmployeeModel
+@{
+    ViewData["Title"] = "Employee";
+}
+
+<div class="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a class="nav-link" asp-page="/Manufacturer/Dashboard">Dashboard</a>
+        </li>
+
+        <li class="breadcrumb-item active" aria-current="page">
+            Employee
+        </li>
+    </ol>
+</div>
+
+
+<div class="container">
+
+    <!-- Add Employee -->
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header bg-dark">
+            <h5 class="mb-0 text-white">Add Employee</h5>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post" id="EmployeeValidate">
+
+                <div class="row">
+
+                    <!-- Employee ID -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Employee ID
+                        </label>
+
+                        <input type="text" asp-for="employee.EmployeeId"
+                               class="form-control"
+                               placeholder="Enter Employee ID" />
+                               <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Full Name -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Full Name
+                        </label>
+
+                        <input type="text" asp-for="employee.FullName"
+                               class="form-control"
+                               placeholder="Enter Full Name" />
+                               <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Business Email -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Business Email
+                        </label>
+
+                        <input type="email" asp-for="employee.BusinessEmail"
+                               class="form-control"
+                               placeholder="Enter Business Email" />
+                               <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Contact Number -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Contact Number
+                        </label>
+
+                        <input type="tel"
+                               class="form-control" asp-for="employee.ContactNumber"
+                               placeholder="Enter Contact Number" />
+                               <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Department -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Department
+                        </label>
+
+                        <select class="form-select" asp-for="employee.Department">
+                            <option value="">Select Department</option>
+                            <option>Product Management</option>
+                            <option>Quality</option>
+                            <option>Recall Management</option>
+                            <option>Customer Support</option>
+                            <option>Sales</option>
+                        </select>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Role -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Role
+                        </label>
+
+                        <select class="form-select" asp-for="employee.Role">
+                            <option value="">Select Role</option>
+                            <option>Manufacturer Admin</option>
+                            <option>Product Manager</option>
+                            <option>Recall Manager</option>
+                            <option>Quality Manager</option>
+                            <option>Customer Support</option>
+                            <option>Employee</option>
+                        </select>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+                    <!-- Status -->
+                    @* <div class="col-md-6 mb-3">
+                        <label class="form-label">
+                            Status
+                        </label>
+
+                        <select class="form-select">
+                            <option value="">Select Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div> *@
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="mt-3">
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Add Employee
+                    </button>
+
+                    <button type="reset"
+                            class="btn btn-secondary">
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Employee List -->
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+            <h5 class="mb-0">Employee List</h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-dark">
+
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Full Name</th>
+                            <th>Business Email</th>
+                            <th>Contact</th>
+                            <th>Department</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- Employee 1 -->
+                        <tr>
+
+                            <td>EMP001</td>
+
+                            <td>Sai Teja</td>
+
+                            <td>sai@company.com</td>
+
+                            <td>9876543210</td>
+
+                            <td>Quality</td>
+
+                            <td>Quality Manager</td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+
+                                 <button type="button"
+                                        class="btn btn-sm btn-outline-warning">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Employee 2 -->
+                        <tr>
+
+                            <td>EMP002</td>
+
+                            <td>Ravi Kumar</td>
+
+                            <td>ravi@company.com</td>
+
+                            <td>9876543211</td>
+
+                            <td>Product Management</td>
+
+                            <td>Product Manager</td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-warning">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Employee 3 -->
+                        <tr>
+
+                            <td>EMP003</td>
+
+                            <td>Priya Sharma</td>
+
+                            <td>priya@company.com</td>
+
+                            <td>9876543212</td>
+
+                            <td>Customer Support</td>
+
+                            <td>Customer Support</td>
+
+                            <td>
+                                <span class="badge bg-secondary">
+                                    Inactive
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+<button type="button"
+                                        class="btn btn-sm btn-outline-warning">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button type="button"
+                                        class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script>
+
+        $(function () {
+
+            $.validator.addMethod(
+                "indianMobile",
+                function (value, element) {
+                    return this.optional(element) ||
+                        /^(?:(?:\+91|91|0)[\s-]?)?[6-9]\d{9}$/.test(value);
+                },
+                "Enter a valid mobile number."
+            );
+
+            $("#EmployeeValidate").validate({
+
+                rules: {
+
+                    "employee.EmployeeId": {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+
+                    "employee.FullName": {
+                        required: true,
+                        minlength: 3
+                    },
+
+                    "employee.BusinessEmail": {
+                        required: true,
+                        email: true
+                    },
+
+                    "employee.ContactNumber": {
+                        required: true,
+                        indianMobile: true
+                    },
+
+                    "employee.Department": {
+                        required: true
+                    },
+
+                    "employee.Role": {
+                        required: true
+                    }
+                },
+
+                messages: {
+
+                    "employee.EmployeeId": {
+                        required: "Enter Employee ID.",
+                        minlength: "Employee ID must be at least 3 characters.",
+                        maxlength: "Employee ID cannot exceed 20 characters."
+                    },
+
+                    "employee.FullName": {
+                        required: "Enter Full Name.",
+                        minlength: "Full Name must be at least 3 characters."
+                    },
+
+                    "employee.BusinessEmail": {
+                        required: "Enter Business Email.",
+                        email: "Enter a valid email address."
+                    },
+
+                    "employee.ContactNumber": {
+                        required: "Enter Contact Number."
+                    },
+
+                    "employee.Department": {
+                        required: "Please select a department."
+                    },
+
+                    "employee.Role": {
+                        required: "Please select a role."
+                    }
+                },
+
+                errorElement: "span",
+
+                errorClass: "text-danger",
+
+                highlight: function (element) {
+                    $(element).addClass("is-invalid");
+                },
+
+                unhighlight: function (element) {
+                    $(element).removeClass("is-invalid");
+                },
+
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                }
+                
+
+            });
+            $("#EmployeeValidate").on("reset", function () {
+                const form = $(this);
+
+                setTimeout(function () {
+                    form.validate().resetForm();
+                    form.find(".is-invalid").removeClass("is-invalid");
+                }, 0);
+            });
+
+        });
+
+    </script>
+}

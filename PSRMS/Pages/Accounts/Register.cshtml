@@ -1,0 +1,642 @@
+@page
+@model PSRMS.Pages.Accounts.RegisterModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/Register_m/register_m.css" asp-append-version="true" />
+    <title>Manufacturer Registration - PSRMS</title>
+</head>
+
+<body>
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <!-- Brand -->
+                <div class="brand-block">
+                    <div class="brand-badge">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                    </div>
+                    <div class="brand-title">PSRMS</div>
+                    <div class="brand-subtitle">Product Safety Recall Management</div>
+                </div>
+
+                <div class="card register-card shadow">
+
+                    <div class="card-body p-5">
+
+                        <div class="row">
+
+                            <!-- Registration Form -->
+                            <div class="col-md-7">
+
+                                <h2 class="register-heading">
+                                    Manufacturer Registration
+                                </h2>
+
+                                <p class="text-muted">
+                                    Create your organization account and start managing product safety recalls.
+                                </p>
+
+                                <!-- Step indicator -->
+                                <div class="step-indicator">
+                                    <span id="stepLabel1" class="step-label-active">1. Company Info</span>
+                                    <span id="stepLabel2">2. Business Details</span>
+                                    <span id="stepLabel3">3. Admin Account</span>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                    <div id="progressBar" class="progress-bar" style="width:33%">
+                                    </div>
+                                </div>
+
+                                <form method="post" id="registerForm">
+
+                                    <!-- STEP 1 -->
+                                    <div class="step active" id="step1">
+
+                                        <h5 class="mb-3">Step 1: Company Information</h5>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Company Name</label>
+                                            <input type="text" class="form-control" asp-for="Vendor.CompanyName"
+                                                   placeholder="ABC Electronics Pvt Ltd" />
+                                            <span class="text-danger" asp-validation-for="Vendor.CompanyName"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Business Email</label>
+                                            <input type="email" class="form-control" asp-for="Vendor.BusinessEmail"
+                                                   placeholder="contact@company.com" />
+                                            <span class="text-danger" asp-validation-for="Vendor.BusinessEmail"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Contact Number</label>
+                                            <input type="tel" class="form-control" asp-for="Vendor.ContactNumber"
+                                                   placeholder="+91 XXXXX XXXXX" />
+                                            <span class="text-danger" asp-validation-for="Vendor.ContactNumber"></span>
+                                        </div>
+
+                                        <div class="text-end">
+                                            <button type="button" class="btn btn-primary nextBtn">
+                                                Next
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- STEP 2 -->
+                                    <div class="step" id="step2">
+
+                                        <h5 class="mb-3">Step 2: Business Details</h5>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Industry</label>
+                                            <select class="form-select" asp-for="Vendor.Industry">
+                                                <option value="">Select Industry</option>
+                                                <option>Electronics</option>
+                                                <option>Home Appliances</option>
+                                                <option>Consumer Goods</option>
+                                                <option>Automotive</option>
+                                            </select>
+                                            <span class="text-danger" asp-validation-for="Vendor.Industry"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Country</label>
+                                            <input type="text" asp-for="Vendor.Country" class="form-control"
+                                                   placeholder="India" />
+                                            <span class="text-danger" asp-validation-for="Vendor.Country"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                Company Website (Optional)
+                                            </label>
+
+                                            <input type="url" class="form-control" asp-for="Vendor.CompanyWeb"
+                                                   placeholder="https://company.com" />
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn btn-secondary prevBtn">
+                                                Previous
+                                            </button>
+
+                                            <button type="button" class="btn btn-primary nextBtn">
+                                                Next
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- STEP 3 -->
+                                    <div class="step" id="step3">
+
+                                        <h5 class="mb-3">Step 3: Administrator Account</h5>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Full Name</label>
+                                            <input type="text" asp-for="Vendor.FullName"
+                                                   class="form-control" />
+                                            <span class="text-danger" asp-validation-for="Vendor.FullName"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" asp-for="Vendor.Password" class="form-control" />
+                                            <span class="text-danger" asp-validation-for="Vendor.Password"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Confirm Password</label>
+                                            <input type="password" asp-for="Vendor.ConfirmPassword"
+                                                   class="form-control" />
+                                            <span class="text-danger" asp-validation-for="Vendor.ConfirmPassword"></span>
+                                        </div>
+
+                                        <div class="form-check mb-3"> <input class="form-check-input" type="checkbox" asp-for="Vendor.TermsAndCondition" /> <label class="form-check-label"> I agree to the Terms & Conditions </label> <span class="text-danger d-block" asp-validation-for="Vendor.TermsAndCondition"> </span> </div>
+
+                                        <div class="d-flex justify-content-between">
+
+                                            <button type="button" class="btn btn-secondary prevBtn">
+                                                Previous
+                                            </button>
+
+                                            <button type="submit" class="btn btn-success">
+                                                Create Account
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                            <!-- Right Side Benefits -->
+                            <div class="col-md-5">
+
+                                <div class="benefits p-4 h-100">
+
+                                    <h4>Why Choose PSRMS?</h4>
+
+                                    <hr />
+
+                                    <ul>
+                                        <li>Create and manage recalls</li>
+                                        <li>Identify affected customers</li>
+                                        <li>Track claims and resolutions</li>
+                                        <li>Manage refunds & replacements</li>
+                                        <li>Generate compliance reports</li>
+                                        <li>Monitor recall performance</li>
+                                    </ul>
+
+                                    <div class="mt-4">
+                                        <h5>Trusted Recall Workflow</h5>
+
+                                        <p>
+                                            Incident Detection →
+                                            Recall Creation →
+                                            Customer Identification →
+                                            Notifications →
+                                            Resolution →
+                                            Reporting
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+    $(document).ready(function () {
+        const steps = document.querySelectorAll(".step");
+        const nextButtons = document.querySelectorAll(".nextBtn");
+        const previousButtons = document.querySelectorAll(".prevBtn");
+        const stepLabels = document.querySelectorAll(".step-indicator span");
+        const progressBar = document.getElementById("progressBar");
+        const registerForm = document.getElementById("registerForm");
+
+        let currentStep = 0;
+
+        @* if (!registerForm) {
+            console.error("Registration form was not found.");
+            return;
+        } *@
+
+        function showError(fieldName, message) {
+            const input = $(`[name="${fieldName}"]`);
+            const errorSpan = $(`[data-valmsg-for="${fieldName}"]`);
+
+            input.addClass("is-invalid");
+
+            errorSpan
+                .text(message)
+                .removeClass("field-validation-valid")
+                .addClass("field-validation-error text-danger");
+        }
+
+        function clearFieldError(fieldName) {
+            if (!fieldName) {
+                return;
+            }
+
+            const input = $(`[name="${fieldName}"]`);
+            const errorSpan = $(`[data-valmsg-for="${fieldName}"]`);
+
+            input.removeClass("is-invalid");
+
+            errorSpan
+                .text("")
+                .removeClass("field-validation-error")
+                .addClass("field-validation-valid");
+        }
+
+        function showStep(index) {
+            if (index < 0 || index >= steps.length) {
+                return;
+            }
+
+            steps.forEach(function (step, stepIndex) {
+                step.classList.toggle("active", stepIndex === index);
+            });
+
+            stepLabels.forEach(function (label, labelIndex) {
+                label.classList.toggle(
+                    "step-label-active",
+                    labelIndex === index
+                );
+            });
+
+            const progressPercent = ((index + 1) / steps.length) * 100;
+
+            progressBar.style.width = progressPercent + "%";
+            progressBar.setAttribute(
+                "aria-valuenow",
+                Math.round(progressPercent)
+            );
+
+            currentStep = index;
+        }
+
+        function validateStep1() {
+            let isValid = true;
+
+            const companyName =
+                $("#Vendor_CompanyName").val()?.trim() || "";
+
+            const businessEmail =
+                $("#Vendor_BusinessEmail").val()?.trim() || "";
+
+            const contactNumber =
+                $("#Vendor_ContactNumber").val()?.trim() || "";
+
+            const emailPattern =
+                /^[^\s\x40]+\x40[^\s\x40]+\.[^\s\x40]+$/;
+
+            const phonePattern =
+                /^(?:(?:\+91|91|0)[\s-]?)?[6-9]\d{9}$/;
+
+            clearFieldError("Vendor.CompanyName");
+            clearFieldError("Vendor.BusinessEmail");
+            clearFieldError("Vendor.ContactNumber");
+
+            if (companyName === "") {
+                showError(
+                    "Vendor.CompanyName",
+                    "Enter Company Name."
+                );
+
+                isValid = false;
+            } else if (companyName.length < 2) {
+                showError(
+                    "Vendor.CompanyName",
+                    "Company Name must contain at least 2 characters."
+                );
+
+                isValid = false;
+            } else if (companyName.length > 150) {
+                showError(
+                    "Vendor.CompanyName",
+                    "Company Name cannot exceed 150 characters."
+                );
+
+                isValid = false;
+            }
+
+            if (businessEmail === "") {
+                showError(
+                    "Vendor.BusinessEmail",
+                    "Enter Business Email."
+                );
+
+                isValid = false;
+            } else if (!emailPattern.test(businessEmail)) {
+                showError(
+                    "Vendor.BusinessEmail",
+                    "Enter a valid business email address."
+                );
+
+                isValid = false;
+            }
+
+            if (contactNumber === "") {
+                showError(
+                    "Vendor.ContactNumber",
+                    "Enter Contact Number."
+                );
+
+                isValid = false;
+            } else if (!phonePattern.test(contactNumber)) {
+                showError(
+                    "Vendor.ContactNumber",
+                    "Enter a valid Indian mobile number."
+                );
+
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function validateStep2() {
+            let isValid = true;
+
+            const industry =
+                $("#Vendor_Industry").val() || "";
+
+            const country =
+                $("#Vendor_Country").val()?.trim() || "";
+
+            const companyWeb =
+                $("#Vendor_CompanyWeb").val()?.trim() || "";
+
+            clearFieldError("Vendor.Industry");
+            clearFieldError("Vendor.Country");
+            clearFieldError("Vendor.CompanyWeb");
+
+            if (industry === "") {
+                showError(
+                    "Vendor.Industry",
+                    "Please select an industry."
+                );
+
+                isValid = false;
+            }
+
+            if (country === "") {
+                showError(
+                    "Vendor.Country",
+                    "Country is required."
+                );
+
+                isValid = false;
+            } else if (country.length < 2) {
+                showError(
+                    "Vendor.Country",
+                    "Enter a valid country name."
+                );
+
+                isValid = false;
+            }
+
+            if (companyWeb !== "") {
+                try {
+                    const websiteUrl = new URL(companyWeb);
+
+                    const validProtocol =
+                        websiteUrl.protocol === "http:" ||
+                        websiteUrl.protocol === "https:";
+
+                    const validHostname =
+                        websiteUrl.hostname.includes(".");
+
+                    if (!validProtocol || !validHostname) {
+                        throw new Error("Invalid website URL.");
+                    }
+                } catch (error) {
+                    showError(
+                        "Vendor.CompanyWeb",
+                        "Enter a complete website URL, for example https://company.com."
+                    );
+
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        function validateStep3() {
+            let isValid = true;
+
+            const fullName =
+                $("#Vendor_FullName").val()?.trim() || "";
+
+            const password =
+                $("#Vendor_Password").val() || "";
+
+            const confirmPassword =
+                $("#Vendor_ConfirmPassword").val() || "";
+
+            const termsAccepted =
+                $("#Vendor_TermsAndCondition").is(":checked");
+
+            const namePattern =
+                /^[A-Za-z][A-Za-z\s.'-]*$/;
+
+            const passwordPattern =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+
+            clearFieldError("Vendor.FullName");
+            clearFieldError("Vendor.Password");
+            clearFieldError("Vendor.ConfirmPassword");
+            clearFieldError("Vendor.TermsAndCondition");
+
+            if (fullName === "") {
+                showError(
+                    "Vendor.FullName",
+                    "Full Name is required."
+                );
+
+                isValid = false;
+            } else if (fullName.length < 2) {
+                showError(
+                    "Vendor.FullName",
+                    "Full Name must contain at least 2 characters."
+                );
+
+                isValid = false;
+            } else if (!namePattern.test(fullName)) {
+                showError(
+                    "Vendor.FullName",
+                    "Enter a valid full name."
+                );
+
+                isValid = false;
+            }
+
+            if (password === "") {
+                showError(
+                    "Vendor.Password",
+                    "Password is required."
+                );
+
+                isValid = false;
+            } else if (password.length < 8) {
+                showError(
+                    "Vendor.Password",
+                    "Password must contain at least 8 characters."
+                );
+
+                isValid = false;
+            } else if (!passwordPattern.test(password)) {
+                showError(
+                    "Vendor.Password",
+                    "Password must include uppercase, lowercase, number and special character."
+                );
+
+                isValid = false;
+            }
+
+            if (confirmPassword === "") {
+                showError(
+                    "Vendor.ConfirmPassword",
+                    "Please confirm your password."
+                );
+
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                showError(
+                    "Vendor.ConfirmPassword",
+                    "Passwords do not match."
+                );
+
+                isValid = false;
+            }
+
+            if (!termsAccepted) {
+                showError(
+                    "Vendor.TermsAndCondition",
+                    "You must accept the Terms and Conditions."
+                );
+
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function focusFirstInvalidField(stepIndex) {
+            const invalidField =
+                steps[stepIndex].querySelector(".is-invalid");
+
+            if (invalidField) {
+                invalidField.focus();
+            }
+        }
+
+        nextButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                let isValid = false;
+
+                if (currentStep === 0) {
+                    isValid = validateStep1();
+                } else if (currentStep === 1) {
+                    isValid = validateStep2();
+                }
+
+                if (!isValid) {
+                    focusFirstInvalidField(currentStep);
+                    return;
+                }
+
+                if (currentStep < steps.length - 1) {
+                    showStep(currentStep + 1);
+                }
+            });
+        });
+
+        previousButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+        });
+
+        registerForm.addEventListener("submit", function (event) {
+            const step1Valid = validateStep1();
+            const step2Valid = validateStep2();
+            const step3Valid = validateStep3();
+
+            if (!step1Valid) {
+                event.preventDefault();
+                showStep(0);
+                focusFirstInvalidField(0);
+                return;
+            }
+
+            if (!step2Valid) {
+                event.preventDefault();
+                showStep(1);
+                focusFirstInvalidField(1);
+                return;
+            }
+
+            if (!step3Valid) {
+                event.preventDefault();
+                showStep(2);
+                focusFirstInvalidField(2);
+            }
+        });
+
+        $("#registerForm").on(
+            "input change",
+            "input, select",
+            function () {
+                clearFieldError(this.name);
+            }
+        );
+
+        showStep(0);
+    });
+</script>
+</body>
+
+</html>

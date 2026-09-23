@@ -1,0 +1,302 @@
+
+:root[b-jhwuxclzs7] {
+    --portal-primary: #2563eb;
+    --portal-primary-dark: #1d4ed8;
+    --portal-text: #1e293b;
+    --portal-text-muted: #64748b;
+    --portal-border: #e2e8f0;
+    --portal-bg: #f8fafc;
+    --portal-surface: #ffffff;
+    --portal-danger: #ef4444;
+    --portal-radius: 8px;
+}
+
+body[b-jhwuxclzs7] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--portal-bg);
+    color: var(--portal-text);
+}
+
+/* ===== Layout shell ===== */
+.portal-wrapper[b-jhwuxclzs7] {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.portal-sidebar[b-jhwuxclzs7] {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: var(--portal-surface);
+    border-right: 1px solid var(--portal-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-area[b-jhwuxclzs7] {
+    padding: 22px 20px;
+    border-bottom: 1px solid var(--portal-border);
+}
+
+.brand-link[b-jhwuxclzs7] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-symbol[b-jhwuxclzs7] {
+    width: 38px;
+    height: 38px;
+    background-color: var(--portal-primary);
+    color: #fff;
+    border-radius: var(--portal-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.brand-name[b-jhwuxclzs7] {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    color: var(--portal-text);
+}
+
+.brand-description[b-jhwuxclzs7] {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--portal-text-muted);
+    margin-top: 1px;
+}
+
+.sidebar-navigation[b-jhwuxclzs7] {
+    padding: 16px 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-link[b-jhwuxclzs7] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--portal-radius);
+    color: #fff;
+    background-color: #0c0c0c;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover[b-jhwuxclzs7] {
+    background-color: #1561cb;
+    color: #0c0c0c !important;
+}
+
+.sidebar-link.active[b-jhwuxclzs7] {
+    background-color: var(--portal-primary);
+    color: #dd0404 !important;
+}
+
+
+.nav-symbol[b-jhwuxclzs7] {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background-color: #eef2f7;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.sidebar-link.active .nav-symbol[b-jhwuxclzs7] {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.sidebar-footer[b-jhwuxclzs7] {
+    padding: 14px;
+    border-top: 1px solid var(--portal-border);
+}
+
+.help-card[b-jhwuxclzs7] {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    background-color: var(--portal-bg);
+    border: 1px solid var(--portal-border);
+    border-radius: var(--portal-radius);
+    font-size: 0.8rem;
+}
+
+.help-card-icon[b-jhwuxclzs7] {
+    width: 26px;
+    height: 26px;
+    background-color: var(--portal-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+.help-card strong[b-jhwuxclzs7] {
+    font-size: 0.82rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.help-card p[b-jhwuxclzs7] {
+    margin: 0;
+    color: var(--portal-text-muted);
+    line-height: 1.4;
+}
+
+/* ===== Main area ===== */
+.portal-main[b-jhwuxclzs7] {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.portal-header[b-jhwuxclzs7] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background-color: var(--portal-surface);
+    border-bottom: 1px solid var(--portal-border);
+}
+
+.header-label[b-jhwuxclzs7] {
+    margin: 0 0 2px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--portal-text-muted);
+    font-weight: 600;
+}
+
+.header-title[b-jhwuxclzs7] {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--portal-text);
+}
+
+.header-actions[b-jhwuxclzs7] {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.notification-button[b-jhwuxclzs7] {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--portal-bg);
+    border: 1px solid var(--portal-border);
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background-color 0.12s ease;
+}
+
+.notification-button:hover[b-jhwuxclzs7] {
+    background-color: #eef2f7;
+}
+
+.notification-indicator[b-jhwuxclzs7] {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--portal-danger);
+    border: 2px solid var(--portal-surface);
+}
+
+.user-profile[b-jhwuxclzs7] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 18px;
+    border-right: 1px solid var(--portal-border);
+}
+
+.user-avatar[b-jhwuxclzs7] {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--portal-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.user-details[b-jhwuxclzs7] {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+    line-height: 1.3;
+}
+
+.user-details strong[b-jhwuxclzs7] {
+    color: var(--portal-text);
+    font-weight: 600;
+}
+
+.user-details span[b-jhwuxclzs7] {
+    color: var(--portal-text-muted);
+    font-size: 0.75rem;
+}
+
+.logout-button[b-jhwuxclzs7] {
+    border: 1px solid var(--portal-border);
+    background-color: var(--portal-surface);
+    color: var(--portal-text);
+    padding: 7px 16px;
+    border-radius: var(--portal-radius);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.logout-button:hover[b-jhwuxclzs7] {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* ===== Mobile nav (hidden on desktop) ===== */
+.mobile-navigation[b-jhwuxclzs7] {
+    display: none;
+}
+
+/*

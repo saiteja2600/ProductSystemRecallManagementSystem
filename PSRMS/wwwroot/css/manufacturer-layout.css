@@ -1,0 +1,47 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8fafc;
+}
+
+/* Fixed sidebar width - Bootstrap has no built-in sidebar sizing utility */
+.portal-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+/* Bootstrap doesn't ship a min-width: 0 utility, needed to prevent flex overflow */
+.min-w-0 {
+    min-width: 0;
+}
+
+/* Sidebar link states - Bootstrap's .nav-link has no "filled active pill" style */
+.sidebar-link {
+    color: #475569;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #1561cb;
+    color: #f3eded !important;
+}
+
+.sidebar-link.active {
+    background-color: var(--portal-primary);
+    color: #f3eded  !important;
+}
+
+.sidebar-link i {
+    width: 18px;
+    text-align: center;
+}
+
+/* Mobile nav pill buttons - slightly tighter than default btn-sm padding */
+@media (max-width: 767.98px) {
+    .portal-sidebar {
+        display: none !important;
+    }
+}

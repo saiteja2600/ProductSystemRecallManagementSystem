@@ -1,0 +1,193 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container py-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold text-primary">
+            Product Safety Recall Management System
+        </h1>
+
+        <p class="lead mt-4">
+            Respond Faster. Protect Customers. Ensure Compliance.
+        </p>
+
+        <p class="text-muted fs-5">
+            A centralized platform that enables manufacturers to detect,
+            manage, and execute product safety recalls from incident
+            identification through customer resolution and regulatory reporting.
+        </p>
+
+        <div class="mt-4">
+            <a asp-page="/Accounts/Login"
+               class="btn btn-primary btn-lg me-2">
+                Organization Portal
+            </a>
+
+            <a asp-page="/Recalls/Check"
+               class="btn btn-outline-primary btn-lg">
+                Customer Portal
+            </a>
+        </div>
+    </div>
+
+    <!-- Safety Alert -->
+    <div class="alert alert-warning shadow-sm">
+        <h4 class="fw-bold mb-2 text-danger text-center"> <i class="bi bi-exclamation-triangle"></i> Safety Alert</h4>
+
+        <p class="mb-0">
+            If an electronic product is overheating, emitting smoke,
+            sparking, or showing battery damage, discontinue use
+            immediately and verify whether it is subject to an active recall.
+        </p>
+    </div>
+
+    <!-- Recall Checker -->
+    @* <div class="card border-danger shadow-sm mt-5">
+        <div class="card-body text-center p-5">
+            <h2 class="text-danger">
+                Check Product Recall Status
+            </h2>
+
+            <p class="text-muted">
+                Verify whether a product is affected by an active recall
+                using its model number or serial number.
+            </p>
+
+            <a asp-page="/Recalls/Check"
+               class="btn btn-danger btn-lg">
+                Check Product
+            </a>
+        </div>
+    </div> *@
+
+    <!-- Core Capabilities -->
+    <div class="mt-5">
+        <h2 class="text-center mb-4">
+            Recall Management Capabilities
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5>Recall Creation & Tracking</h5>
+                        <p>
+                            Create recalls, define affected products,
+                            monitor recall progress, and track completion rates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5>Customer Identification</h5>
+                        <p>
+                            Identify affected customers using purchase records,
+                            warranty registrations, retailer data,
+                            and product serial numbers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5>Claims & Resolution</h5>
+                        <p>
+                            Manage refunds, replacements, repairs,
+                            product returns, and claim approvals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Recall Lifecycle -->
+    <div class="mt-5">
+        <h2 class="text-center mb-5">
+            End-to-End Recall Lifecycle
+        </h2>
+
+        <div class="row text-center">
+
+            <div class="col-md">
+                <h5>1. Incident Report</h5>
+                <p>Capture customer complaints and safety incidents.</p>
+            </div>
+
+            <div class="col-md">
+                <h5>2. Risk Assessment</h5>
+                <p>Evaluate severity and determine recall eligibility.</p>
+            </div>
+
+            <div class="col-md">
+                <h5>3. Recall Launch</h5>
+                <p>Define affected products and initiate recall campaigns.</p>
+            </div>
+
+            <div class="col-md">
+                <h5>4. Customer Notification</h5>
+                <p>Notify affected customers through multiple channels.</p>
+            </div>
+
+            <div class="col-md">
+                <h5>5. Resolution</h5>
+                <p>Process refunds, repairs, replacements, and returns.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="row mt-5 g-4">
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3>12</h3>
+                    <p>Active Recalls</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3>110K</h3>
+                    <p>Affected Products</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3>98K</h3>
+                    <p>Customers Notified</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3>76K</h3>
+                    <p>Claims Processed</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

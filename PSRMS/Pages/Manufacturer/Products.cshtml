@@ -1,0 +1,336 @@
+@page
+@model PSRMS.Pages.Manufacturer.ProductModel
+@{
+    ViewData["Title"]="Product";
+}
+
+<div class="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a class="nav-link" asp-page="/Manufacturer/Dashboard">Dashboard</a>
+        </li>
+
+        <li class="breadcrumb-item active" aria-current="page">
+            Product
+        </li>
+    </ol>
+</div>
+
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark">
+            <h5 class="mb-0 text-white">Add Product</h5>
+        </div>
+        <div class="card-body">
+            <form method="post" id="ProductValidate">
+
+    <div class="row">
+
+        <!-- Product Name -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Product Id</label>
+
+            <input asp-for="product.Productid"
+                   class="form-control"
+                   placeholder="Enter Product Id" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Product Name</label>
+
+            <input asp-for="product.ProductName"
+                   class="form-control"
+                   placeholder="Enter Product Name" />
+        </div>
+
+        <!-- Model Number -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Model Number</label>
+
+            <input asp-for="product.ModelNumber"
+                   class="form-control"
+                   placeholder="Enter Model Number" />
+        </div>
+
+        <!-- Category -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Category</label>
+
+            <select asp-for="product.Category"
+                    class="form-select">
+                <option value="">Select Category</option>
+                <option>Electronics</option>
+                <option>Home Appliances</option>
+                <option>Consumer Goods</option>
+                <option>Automotive</option>
+                <option>Industrial Equipment</option>
+            </select>
+        </div>
+
+        <!-- Brand -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Brand</label>
+
+            <input asp-for="product.Brand"
+                   class="form-control"
+                   placeholder="Enter Brand Name" />
+        </div>
+
+        <!-- Batch Number -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Batch Number</label>
+
+            <input asp-for="product.BatchNumber"
+                   class="form-control"
+                   placeholder="Enter Batch Number" />
+        </div>
+
+        <!-- Manufacturing Date -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Manufacturing Date</label>
+
+            <input asp-for="product.ManufacturingDate"
+                   type="date"
+                   class="form-control" />
+        </div>
+
+        <!-- Manufacturing Location -->
+        @* <div class="col-md-6 mb-3">
+            <label class="form-label">Manufacturing Location</label>
+
+            <input asp-for="product.ManufacturingLocation"
+                   class="form-control"
+                   placeholder="Enter Manufacturing Location" />
+        </div> *@
+
+        <!-- Warranty -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Warranty (Months)</label>
+
+            <input asp-for="product.WarrantyPeriod"
+                   type="number"
+                   class="form-control"
+                   placeholder="12" />
+        </div>
+
+       
+       
+
+        <!-- Description -->
+        <div class="col-md-12 mb-3">
+            <label class="form-label">Description</label>
+
+            <textarea asp-for="product.Description"
+                      rows="4"
+                      class="form-control"
+                      placeholder="Enter Product Description"></textarea>
+        </div>
+
+    </div>
+
+    <div class="mt-3">
+        <button type="submit"
+                class="btn btn-primary">
+            Add Product
+        </button>
+
+        <button type="reset"
+                class="btn btn-secondary">
+            Clear
+        </button>
+    </div>
+
+</form>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(function () {
+
+            $.validator.addMethod(
+                "productIdFormat",
+                function (value, element) {
+                    return this.optional(element) ||
+                        /^[A-Za-z0-9-]+$/.test(value);
+                },
+                "Product ID can contain letters, numbers and hyphens only."
+            );
+
+            $.validator.addMethod(
+                "modelNumberFormat",
+                function (value, element) {
+                    return this.optional(element) ||
+                        /^[A-Za-z0-9._/-]+$/.test(value);
+                },
+                "Enter a valid model number."
+            );
+
+            $.validator.addMethod(
+                "batchNumberFormat",
+                function (value, element) {
+                    return this.optional(element) ||
+                        /^[A-Za-z0-9._/-]+$/.test(value);
+                },
+                "Enter a valid batch number."
+            );
+
+            $.validator.addMethod(
+                "notFutureDate",
+                function (value, element) {
+                    if (this.optional(element)) {
+                        return true;
+                    }
+
+                    const selectedDate = new Date(value + "T00:00:00");
+                    const today = new Date();
+
+                    today.setHours(0, 0, 0, 0);
+
+                    return selectedDate <= today;
+                },
+                "Manufacturing Date cannot be in the future."
+            );
+
+            $("#ProductValidate").validate({
+
+                rules: {
+                    "product.Productid": {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20,
+                        productIdFormat: true
+                    },
+
+                    "product.ProductName": {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 100
+                    },
+
+                    "product.ModelNumber": {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 50,
+                        modelNumberFormat: true
+                    },
+
+                    "product.Category": {
+                        required: true
+                    },
+
+                    "product.Brand": {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+
+                    "product.BatchNumber": {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 50,
+                        batchNumberFormat: true
+                    },
+
+                    "product.ManufacturingDate": {
+                        required: true,
+                        date: true,
+                        notFutureDate: true
+                    },
+
+                    "product.WarrantyPeriod": {
+                        required: true,
+                        digits: true,
+                        min: 1,
+                        max: 120
+                    },
+
+                    "product.Description": {
+                        maxlength: 500
+                    }
+                },
+
+                messages: {
+                    "product.Productid": {
+                        required: "Product ID is required.",
+                        minlength: "Product ID must contain at least 3 characters.",
+                        maxlength: "Product ID cannot exceed 20 characters."
+                    },
+
+                    "product.ProductName": {
+                        required: "Product Name is required.",
+                        minlength: "Product Name must contain at least 3 characters.",
+                        maxlength: "Product Name cannot exceed 100 characters."
+                    },
+
+                    "product.ModelNumber": {
+                        required: "Model Number is required.",
+                        minlength: "Model Number must contain at least 2 characters.",
+                        maxlength: "Model Number cannot exceed 50 characters."
+                    },
+
+                    "product.Category": {
+                        required: "Please select a category."
+                    },
+
+                    "product.Brand": {
+                        required: "Brand is required.",
+                        minlength: "Brand must contain at least 2 characters.",
+                        maxlength: "Brand cannot exceed 100 characters."
+                    },
+
+                    "product.BatchNumber": {
+                        required: "Batch Number is required.",
+                        minlength: "Batch Number must contain at least 2 characters.",
+                        maxlength: "Batch Number cannot exceed 50 characters."
+                    },
+
+                    "product.ManufacturingDate": {
+                        required: "Manufacturing Date is required.",
+                        date: "Enter a valid Manufacturing Date."
+                    },
+
+                    "product.WarrantyPeriod": {
+                        required: "Warranty Period is required.",
+                        digits: "Warranty Period must be a whole number.",
+                        min: "Warranty Period must be at least 1 month.",
+                        max: "Warranty Period cannot exceed 120 months."
+                    },
+
+                    "product.Description": {
+                        maxlength: "Description cannot exceed 500 characters."
+                    }
+                },
+
+                errorElement: "span",
+                errorClass: "text-danger d-block mt-1",
+
+                highlight: function (element) {
+                    $(element).addClass("is-invalid");
+                },
+
+                unhighlight: function (element) {
+                    $(element).removeClass("is-invalid");
+                },
+
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                },
+
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+
+            $("#ProductValidate").on("reset", function () {
+                const form = $(this);
+
+                setTimeout(function () {
+                    form.validate().resetForm();
+                    form.find(".is-invalid").removeClass("is-invalid");
+                }, 0);
+            });
+        });
+    </script>
+}

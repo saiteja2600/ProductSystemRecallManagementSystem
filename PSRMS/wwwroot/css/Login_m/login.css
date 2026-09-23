@@ -1,0 +1,205 @@
+:root {
+    --psrms-navy: #0f2a4a;
+    --psrms-navy-dark: #0a1d33;
+    --psrms-amber: #f59e0b;
+    --psrms-amber-dark: #d97706;
+    --psrms-red: #dc2626;
+}
+
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(160deg, var(--psrms-navy) 0%, var(--psrms-navy-dark) 55%, #050c16 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle hazard-stripe accent band along the top of the viewport */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--psrms-amber),
+        var(--psrms-amber) 14px,
+        var(--psrms-navy-dark) 14px,
+        var(--psrms-navy-dark) 28px
+    );
+    z-index: 10;
+}
+
+.brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.75rem;
+}
+
+.brand-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--psrms-amber), var(--psrms-amber-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+    margin-bottom: 1rem;
+}
+
+.brand-badge svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.brand-title {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.15rem;
+}
+
+.brand-subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.login-card-body {
+    padding: 2.75rem 2.5rem;
+}
+
+.login-heading {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--psrms-navy);
+    margin-bottom: 0.25rem;
+}
+
+.login-subheading {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--psrms-navy);
+    margin-bottom: 0.4rem;
+}
+
+.input-group-custom {
+    position: relative;
+}
+
+.input-group-custom .form-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.form-control-custom {
+    padding: 0.7rem 1rem 0.7rem 2.6rem;
+    border-radius: 10px;
+    border: 1.5px solid #e5e7eb;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control-custom:focus {
+    border-color: var(--psrms-amber);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+.btn-login {
+    background: linear-gradient(135deg, var(--psrms-navy) 0%, var(--psrms-navy-dark) 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -5px rgba(15, 42, 74, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.divider-text {
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    font-size: 0.8rem;
+    margin: 1.5rem 0 1.25rem;
+}
+
+.divider-text::before,
+.divider-text::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.divider-text::before {
+    margin-right: 0.75rem;
+}
+
+.divider-text::after {
+    margin-left: 0.75rem;
+}
+
+.register-link {
+    color: var(--psrms-amber-dark);
+    font-weight: 600;
+}
+
+.register-link:hover {
+    color: var(--psrms-navy);
+}
+
+.validation-summary-errors ul {
+    margin-bottom: 0;
+    padding-left: 1.1rem;
+}
+
+.form-check-label {
+    font-size: 0.85rem;
+    color: #6b7280;
+}

@@ -1,0 +1,11 @@
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\bin\Debug\net10.0\PSRMS.Models.deps.json
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\bin\Debug\net10.0\PSRMS.Models.dll
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\bin\Debug\net10.0\PSRMS.Models.pdb
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.AssemblyInfoInputs.cache
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.AssemblyInfo.cs
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.dll
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\refint\PSRMS.Models.dll
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.pdb
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\ref\PSRMS.Models.dll
