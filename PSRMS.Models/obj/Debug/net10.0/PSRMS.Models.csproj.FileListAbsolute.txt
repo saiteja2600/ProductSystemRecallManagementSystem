@@ -9,3 +9,4 @@ C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net1
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\refint\PSRMS.Models.dll
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.pdb
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\ref\PSRMS.Models.dll
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Models\obj\Debug\net10.0\PSRMS.Models.sourcelink.json

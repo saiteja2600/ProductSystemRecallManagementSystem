@@ -140,7 +140,6 @@ C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\sco
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\scopedcss\bundle\PSRMS.styles.css
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\scopedcss\projectbundle\PSRMS.bundle.scp.css
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\dzeyc63n05-{0}-ntd3i13rge-ntd3i13rge.gz
-C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\9j0xaodx0t-{0}-pistz6gyqa-pistz6gyqa.gz
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\yump1s8ert-{0}-i2abgtrvys-i2abgtrvys.gz
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\9mt1j1pf4d-{0}-jz41h4jbqd-jz41h4jbqd.gz
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\pijinw5dnu-{0}-61n19gt1b8-61n19gt1b8.gz
@@ -217,3 +216,5 @@ C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\PSR
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\ref\PSRMS.dll
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\hfdqr0doeo-{0}-u911umoh72-u911umoh72.gz
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\towjdcxmta-{0}-u911umoh72-u911umoh72.gz
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\PSRMS.sourcelink.json
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS\obj\Debug\net10.0\compressed\9j0xaodx0t-{0}-qsdlu0lmvn-qsdlu0lmvn.gz

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PSRMS.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8108d19d56c5890bf0223eb6bb32956371f5bbab")]
 [assembly: System.Reflection.AssemblyProductAttribute("PSRMS.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PSRMS.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

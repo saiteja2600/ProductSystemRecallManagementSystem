@@ -123,3 +123,4 @@ C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Api\obj\Debug\net10.0
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Api\obj\Debug\net10.0\PSRMS.Api.pdb
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Api\obj\Debug\net10.0\PSRMS.Api.genruntimeconfig.cache
 C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Api\obj\Debug\net10.0\ref\PSRMS.Api.dll
+C:\Users\teja.cp\ProductSystemRecallManagementSystem\PSRMS.Api\obj\Debug\net10.0\PSRMS.Api.sourcelink.json

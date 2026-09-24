@@ -25,12 +25,12 @@ body {
 }
 
 .sidebar-link:hover {
-    background-color: #1561cb;
+    background-color: #1561cb56;
     color: #f3eded !important;
 }
 
 .sidebar-link.active {
-    background-color: var(--portal-primary);
+    background-color:  #1561cb;
     color: #f3eded  !important;
 }
 
